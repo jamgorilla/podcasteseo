@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { sanityClient } from '../lib/sanity';
+import { FaFacebookF, FaInstagram, FaXTwitter } from 'react-icons/fa6';
 
 const query = `*[_type == "homePage"]{
   title,
@@ -23,6 +24,15 @@ export default async function HomePage() {
   const appleImageUrl = getImageByTag('apple');
   const spotifyImageUrl = getImageByTag('spotify');
   const girlImageUrl = getImageByTag('girl');
+  const person1ImageUrl = getImageByTag('person1');
+  const person2ImageUrl = getImageByTag('person2');
+  const person3ImageUrl = getImageByTag('person3');
+  const person4ImageUrl = getImageByTag('person4');
+  const person5ImageUrl = getImageByTag('person5');
+  const person6ImageUrl = getImageByTag('person6');
+  const person7ImageUrl = getImageByTag('person7');
+  const person8ImageUrl = getImageByTag('person8');
+  const person9ImageUrl = getImageByTag('person9');
 
   return (
     <main className="w-full">
@@ -82,13 +92,89 @@ export default async function HomePage() {
               src={heroImageUrl}
               alt="Hero Image"
               fill
-              className="object-cover"
+              className="object-cover  object-right min-[1200px]:object-center"
               priority
             />
           )}
 
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent" />
+
+          {/* Bubbles */}
+          <div className="absolute inset-0 pointer-events-none">
+            {/* Bubble 1 */}
+            <Image
+              src={person1ImageUrl}
+              alt="Person 1"
+              width={120}
+              height={120}
+              className="bubble absolute top-[12%] left-[90%] rounded-full border-[4px] border-[#C18521] hidden min-[1100px]:block"
+            />
+            {/* Bubble 2 */}
+            <Image
+              src={person2ImageUrl}
+              alt="Person 2"
+              width={80}
+              height={80}
+              className="bubble absolute top-[30%] left-[54%] rounded-full border-[4px] border-[#C18521] hidden min-[1100px]:block"
+            />
+            {/* Bubble 3 */}
+            <Image
+              src={person3ImageUrl}
+              alt="Person 3"
+              width={80}
+              height={80}
+              className="bubble absolute top-[80%] left-[60%] rounded-full border-[4px] border-[#C18521] hidden min-[1100px]:block"
+            />
+            {/* Bubble 4 */}
+            <Image
+              src={person4ImageUrl}
+              alt="Person 4"
+              width={120}
+              height={120}
+              className="bubble absolute top-[15%] left-[58%] rounded-full border-[4px] border-[#C18521] hidden min-[1100px]:block"
+            />
+            {/* Bubble 5 */}
+            <Image
+              src={person5ImageUrl}
+              alt="Person 5"
+              width={100}
+              height={100}
+              className="bubble absolute top-[60%] left-[55%] rounded-full border-[4px] border-[#C18521] hidden min-[1100px]:block"
+            />
+            {/* Bubble 6 */}
+            <Image
+              src={person6ImageUrl}
+              alt="Person 6"
+              width={100}
+              height={100}
+              className="bubble absolute top-[80%] left-[55%] rounded-full border-[4px] border-[#C18521] hidden min-[1100px]:block"
+            />
+            {/* Bubble 7 */}
+            <Image
+              src={person7ImageUrl}
+              alt="Person 7"
+              width={120}
+              height={120}
+              className="bubble absolute top-[60%] left-[90%] rounded-full border-[4px] border-[#C18521] hidden min-[1100px]:block"
+            />
+            {/* Bubble 8 */}
+            <Image
+              src={person8ImageUrl}
+              alt="Person 8"
+              width={80}
+              height={80}
+              className="bubble absolute top-[10%] left-[84%] rounded-full border-[4px] border-[#C18521] hidden min-[1050px]:block"
+            />
+            {/* Bubble 9 */}
+            <Image
+              src={person9ImageUrl}
+              alt="Person 9"
+              width={80}
+              height={80}
+              className="bubble absolute top-[75%] left-[90%] rounded-full border-[4px] border-[#C18521] hidden min-[1050px]:block"
+            />
+          </div>
 
           {/* Text and CTA overlay */}
           <div className="absolute inset-0 flex flex-col justify-center px-6 sm:px-20 gap-4 text-white">
@@ -98,13 +184,13 @@ export default async function HomePage() {
               </p>
             </div>
             <div className="overflow-hidden">
-              <h1 className="text-4xl sm:text-6xl font-extrabold font-poppins rise-from-bottom">
+              <h1 className="text-4xl sm:text-3xl md:text-4xl lg:text-6xl font-extrabold font-poppins rise-from-bottom">
                 Grow Your Audience
               </h1>
             </div>
 
             <button
-              className="mt-4 bg-[#8669AD] text-white tracking-wider transition-colors duration-900 hover:bg-white hover:text-black cursor-pointer"
+              className="mt-4 bg-[#8669AD] text-white tracking-wider transition-colors duration-900 hover:bg-white hover:text-black cursor-pointer md:object-center"
               style={{
                 width: '326px',
                 height: '57px',
@@ -218,7 +304,7 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <section className="bg-[#FFF8F0] py-20 px-6 relative">
+        <section className="bg-[#FFF8F0] pt-20 px-6 pb-30 relative">
           {/* Title */}
           <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-semibold font-montserrat text-[#372B47] mb-16">
             What our customers have said...
@@ -310,7 +396,7 @@ export default async function HomePage() {
           </div>
 
           {/* Faint background image in center */}
-          <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0 pt-40">
+          <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0 pt-25">
             <Image
               src={micImageUrl}
               alt="Microphone"
@@ -411,13 +497,44 @@ export default async function HomePage() {
               {/* Column 1 */}
               <div className="flex-1 space-y-4">
                 <h3 className="uppercase font-bold tracking-wider text-sm">
-                  Company
+                  Terms of Use
                 </h3>
                 <ul className="space-y-2 text-sm font-light">
-                  <li>About Us</li>
-                  <li>Careers</li>
-                  <li>Team</li>
-                  <li>Contact</li>
+                  <li className="hover:text-[#C18521] cursor-pointer">
+                    Cookie Policy
+                  </li>
+                  <li className="hover:text-[#C18521] cursor-pointer">
+                    Internet Service Terms
+                  </li>
+                  <ul className="flex space-x-4 mt-6">
+                    <li>
+                      <a
+                        href="https://facebook.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaFacebookF className="text-xl hover:text-[#C18521]" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://instagram.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaInstagram className="text-xl hover:text-[#C18521]" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://x.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaXTwitter className="text-xl hover:text-[#C18521]" />
+                      </a>
+                    </li>
+                  </ul>
                 </ul>
               </div>
 
@@ -427,13 +544,22 @@ export default async function HomePage() {
               {/* Column 2 */}
               <div className="flex-1 space-y-4">
                 <h3 className="uppercase font-bold tracking-wider text-sm">
-                  Services
+                  Menu
                 </h3>
                 <ul className="space-y-2 text-sm font-light">
-                  <li>SEO Audit</li>
-                  <li>Content Strategy</li>
-                  <li>Podcast Transcripts</li>
-                  <li>Analytics</li>
+                  <li className="hover:text-[#C18521] cursor-pointer">Home</li>
+                  <li className="hover:text-[#C18521] cursor-pointer">
+                    About Us
+                  </li>
+                  <li className="hover:text-[#C18521] cursor-pointer">
+                    Our Services
+                  </li>
+                  <li className="hover:text-[#C18521] cursor-pointer">
+                    Start Growing
+                  </li>
+                  <li className="hover:text-[#C18521] cursor-pointer">
+                    Contact Us
+                  </li>
                 </ul>
               </div>
 
@@ -443,17 +569,27 @@ export default async function HomePage() {
               {/* Column 3 */}
               <div className="flex-1 space-y-4">
                 <h3 className="uppercase font-bold tracking-wider text-sm">
-                  Resources
+                  Help
                 </h3>
                 <ul className="space-y-2 text-sm font-light">
-                  <li>Blog</li>
-                  <li>Help Center</li>
-                  <li>Guides</li>
-                  <li>Webinars</li>
+                  <li className="hover:text-[#C18521] cursor-pointer">
+                    Support
+                  </li>
+                  <li className="hover:text-[#C18521] cursor-pointer">
+                    Pricing
+                  </li>
+                  <li className="hover:text-[#C18521] cursor-pointer">
+                    Status
+                  </li>
+                  <li className="hover:text-[#C18521] cursor-pointer">Forum</li>
                 </ul>
               </div>
             </div>
           </div>
+          <p className="pt-15 text-center text-sm">
+            Copyright © 2025 PodRank SEO. Read about our approach to external
+            linking.{' '}
+          </p>
         </footer>
       </div>
     </main>
