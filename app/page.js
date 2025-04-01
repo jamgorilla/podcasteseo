@@ -420,8 +420,8 @@ export default async function HomePage() {
               <p className="text-base sm:text-lg font-montserrat text-white leading-relaxed">
                 Experience increased online visibility and higher search
                 rankings. Our tailored SEO strategies drive targeted traffic to
-                your website, enhancing your brand's reach and engagement. Boost
-                your visibility on Apple and Spotify Podcast charts.
+                your website, enhancing your brand&apos;s reach and engagement.
+                Boost your visibility on Apple and Spotify Podcast charts.
               </p>
 
               {/* Button */}
